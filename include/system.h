@@ -17,7 +17,7 @@
 #include "stitching.h"
 #include "global_optimization.h"
 #include "bufferQueue.h"
-#include "mosaic_db.h"
+#include "mosaicDatabase.h"
 
 namespace ezPano{
 
@@ -63,7 +63,7 @@ public:
 private:
 	
 	//mosaic
-	mosaic_db* mosaic;
+	//mosaicDatabase* mosaic;
 
 	//modules
 	feeder* m_feeder=nullptr; //feeding module

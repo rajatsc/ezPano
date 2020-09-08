@@ -4,7 +4,8 @@
 
 namespace ezPano{
 
-stitching::stitching(){
+stitching::stitching()
+{
 
 }
 
@@ -22,7 +23,7 @@ void stitching::run(){
 		
 
 
-		//std::cout << "stitching" << std::endl;
+		std::cout << "stitching" << std::endl;
 	}
 }
 
@@ -45,7 +46,7 @@ void stitching::request_pause(){
 
 }
 
-void stitching::is_paused() const{
+bool stitching::is_paused() const{
 
 }
 

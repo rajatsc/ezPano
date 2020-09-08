@@ -2,7 +2,6 @@
 #define STITCHING_H
 
 //local
-#include "frame.h"
 #include "bufferQueue.h"
 
 //standard
@@ -13,7 +12,6 @@
 
 namespace ezPano{
 
-class
 
 class stitching{
 public:
@@ -40,7 +38,7 @@ public:
 	
 
 private:
-	bufferQueue<frame> frame_bq;
+	//bufferQueue<frame> frame_bq;
 
 	//---------------------------------------------
 	//               pause and resume thread

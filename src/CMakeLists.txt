@@ -6,9 +6,12 @@ add_library(${PROJECT_NAME}
 			${CMAKE_CURRENT_SOURCE_DIR}/feeder.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/tracking.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/stitching.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/gui.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/global_optimization.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/system.cpp)
+            ${CMAKE_CURRENT_SOURCE_DIR}/system.cpp
+			${CMAKE_CURRENT_SOURCE_DIR}/gui/gui.cpp
+			${CMAKE_CURRENT_SOURCE_DIR}/data/featureDatabase.cpp
+			${CMAKE_CURRENT_SOURCE_DIR}/data/mosaicDatabase.cpp
+			)
 
 
 
@@ -25,6 +28,8 @@ target_include_directories(${PROJECT_NAME}
 							PUBLIC
 							"${PROJECT_SOURCE_DIR}/include"
 							${OPENGL_INCLUDE_DIR}
+							"${CMAKE_CURRENT_SOURCE_DIR}/data"
+							"${CMAKE_CURRENT_SOURCE_DIR}"
 							)
 
 

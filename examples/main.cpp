@@ -7,7 +7,7 @@
 
 //local
 #include "system.h"
-//#include "gui.h"
+#include "gui.h"
 
 
 using namespace ezPano;

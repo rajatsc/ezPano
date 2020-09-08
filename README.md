@@ -1,6 +1,8 @@
+##ezpano
 Multi-threaded Mosaicking system
 
-## Dependencies
+### Dependencies
 OpenCV
 GLEW
 GLFW
+glm

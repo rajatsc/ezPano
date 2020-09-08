@@ -109,7 +109,7 @@ void system::shutdown()
 
 void system::start_feeding(){
 	std::cout << "feeding-------------------" << "\n";
-	m_feeder->feed();
+	//m_feeder->feed();
 }
 
 
@@ -130,7 +130,7 @@ void system::pause_all_threads(){
 	}
 
 	//pause the global optimization module
-	if (m_global_optimizer && !m_global_optimier->is_terminated()){
+	if (m_global_optimizer && !m_global_optimizer->is_terminated()){
 		m_global_optimizer->request_pause();
 
 		//wait for global optimization has finished pausing

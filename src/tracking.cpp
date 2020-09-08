@@ -6,7 +6,7 @@ namespace ezPano{
 
 //constructor
 tracking::tracking()
-:bq(10)
+:img_bq(10)
 {
 
 }
@@ -28,7 +28,7 @@ void tracking::run(){
 		}
 		
 		
-		//std::cout << "tracking" << std::endl;
+		std::cout << "tracking" << std::endl;
 	}
 }
 
@@ -39,19 +39,19 @@ void tracking::run(){
 
 //queue the image
 void tracking::queue_image(cv::Mat& img){
-	bq.push(img);	
+	img_bq.push(img);	
 }
 
 
 //get the number of queued keyframes
 size_t tracking::get_num_queued_images() const{
-	return bq.size();
+	return img_bq.size();
 }	
 
 
 //check if image is queued
 bool tracking::image_is_queued() const{
-	return !bq.empty();
+	return !img_bq.empty();
 }
 
 
@@ -60,7 +60,7 @@ void tracking::request_pause(){
 
 }
 
-void tracking::is_paused() const{
+bool tracking::is_paused() const{
 
 }
 

@@ -14,8 +14,8 @@ public:
 	//---------------------------------------------
 	//			pause and resume thread
 	//---------------------------------------------
-	void request_reset();
-	bool reset_is_requested() const;
+	void request_pause();
+	bool is_paused() const;
 	void resume();
 
 	//---------------------------------------------

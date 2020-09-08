@@ -79,10 +79,10 @@ private:
 	imageProcessor* processor=nullptr;
 	
 	bool is_finished = false;
-	cv::Mat im;
+	cv::Mat img;
 	cv::VideoCapture cap;
 	int deviceID;
-	int frame_skip;
+	int m_frame_skip;
 	
 	tracking* m_tracker;
 	
@@ -90,6 +90,7 @@ private:
 	mutable std::mutex m_mtx_pause;
 	bool m_is_paused = false;
 	bool m_pause_is_requested = false;
+	void pause();
 
 	//terminate
 	mutable std::mutex m_mtx_terminate;

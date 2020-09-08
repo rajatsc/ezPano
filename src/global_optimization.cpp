@@ -21,7 +21,7 @@ void global_optimization::run(){
 			break;
 		}
 
-		//std::cout << "global optimization" << std::endl; 
+		std::cout << "global optimization" << std::endl; 
 	}
 }
 
@@ -31,7 +31,7 @@ void global_optimization::request_pause(){
 
 }
 
-void global_optimization::is_paused(){
+bool global_optimization::is_paused() const{
 
 }
 

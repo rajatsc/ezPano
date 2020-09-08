@@ -2,14 +2,15 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <thread>
 
 namespace ezPano{
 
-void identity::processImplementation(cv::Mat& im){}
+void identity::processImplementation(cv::Mat& img){}
 
 
 feeder::feeder(int _deviceID = 1, int _frame_skip=1)
-	:frame_skip(_frame_skip), deviceID(_deviceID)
+	:m_frame_skip(_frame_skip), deviceID(_deviceID)
 {
 	processor = new identity();
 	cap.open(deviceID);
@@ -26,7 +27,6 @@ feeder::~feeder(){}
 void feeder::feed(){
 	
 	unsigned int num_frame = 0;
-	
 	while(!is_finished){
 			
 		if (terminate_is_requested()){
@@ -35,14 +35,15 @@ void feeder::feed(){
 		}
 		
 		is_finished = cap.read(img);
+		std::cout << "read img" << std::endl;
 		if (!img.empty() && (num_frame%m_frame_skip) == 0)
 		{
-			m_tracker->queue_image();
+			//m_tracker->queue_image();
 		}
 
 		if (!is_finished){
-			if (m_pause_is_requested()){
-				pause();
+			if (m_pause_is_requested){
+				//pause();
 
 				while(is_paused() && !terminate_is_requested()){
 					std::this_thread::sleep_for(std::chrono::milliseconds(5));
@@ -54,6 +55,10 @@ void feeder::feed(){
 }
 
 void feeder::pause(){
+
+}
+
+bool feeder::is_paused() const{
 
 }
 
